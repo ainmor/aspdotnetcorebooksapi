@@ -74,6 +74,23 @@ namespace Books.API.Services
             return null;
         }
 
+        //private HttpClient _httpClient = new HttpClient();
+        //public async Task<IEnumerable<BookCover>> DownloadBookCoversAsync(Guid bookId)
+        //{
+        //    var bookCoverUrls = new[]
+        //    {
+        //        $"http://localhost:52644/api/bookcovers/{bookId}-dummycover1",
+        //        $"http://localhost:52644/api/bookcovers/{bookId}-dummycover2"
+        //    };
+
+        //    var bookCovers = new List<BookCover>();
+        //    var downloadTask1 = DownloadBookCoverAsync(bookCoverUrls[0], bookCovers, _cancellationTokenSource.Token);
+        //    var downloadTask2 = DownloadBookCoverAsync(bookCoverUrls[1], bookCovers, _cancellationTokenSource.Token);
+        //    await Task.WhenAll(downloadTask1, downloadTask2);
+        //    return bookCovers;
+        //}
+
+
         private async Task<BookCover> DownloadBookCoverAsync(
           HttpClient httpClient, string bookCoverUrl,
           CancellationToken cancellationToken)
